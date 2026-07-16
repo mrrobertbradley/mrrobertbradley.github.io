@@ -1,0 +1,182 @@
+/* --- Global Theme & Reset --- */
+:root {
+    --bg-color: #f8fafc;
+    --sidebar-bg: #0f172a;
+    --sidebar-text: #94a3b8;
+    --sidebar-active: #f8fafc;
+    --text-main: #334155;
+    --text-dark: #0f172a;
+    --accent: #2563eb;
+    --accent-light: #eff6ff;
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* --- Layout Structure --- */
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 3rem 2rem;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    margin-left: 280px;
+    flex: 1;
+    padding: 4rem 5% 4rem 5%;
+    max-width: 1000px;
+}
+
+/* --- Sidebar Profile & Nav --- */
+.profile-info {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.profile-info h1 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.profile-info p {
+    font-size: 0.9rem;
+    color: var(--sidebar-text);
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    margin-bottom: 1rem;
+}
+
+.nav-links a {
+    color: var(--sidebar-text);
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--sidebar-active);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links a.active {
+    border-left: 4px solid var(--accent);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Typography & Content Elements --- */
+h2 {
+    color: var(--text-dark);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    color: var(--text-dark);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.section-block {
+    margin-bottom: 2.5rem;
+}
+
+/* --- Custom Components --- */
+/* CV Timeline Lists */
+.cv-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.cv-date {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* Cards (Courses/Publications) */
+.card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--accent-light);
+    color: var(--accent);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Responsive Design (Mobile Setup) --- */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding: 1.5rem;
+    }
+    .profile-info {
+        margin-bottom: 1.5rem;
+    }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    .nav-links li {
+        margin-bottom: 0;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+    }
+    .cv-item {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+}
