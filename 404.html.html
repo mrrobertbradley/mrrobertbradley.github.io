@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | 404 Error</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Extra specific styles to center the 404 message beautifully */
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 70vh;
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .error-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .error-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Shared Sidebar Navigation (Keeps the site structure consistent) -->
+    <nav class="sidebar">
+        <div class="profile-info">
+            <h1>Alex Morgan</h1>
+            <p>Data Scientist & Researcher</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="cv.html">CV / Experience</a></li>
+            <li><a href="courses.html">Courses & Certs</a></li>
+            <li><a href="publications.html">Publications</a></li>
+        </ul>
+    </nav>
+
+    <!-- Centered Error Message -->
+    <main class="main-content">
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <h2 style="border: none; margin-bottom: 0.5rem;">Page Not Found</h2>
+            <p class="error-message">Oops! The page you are looking for doesn't exist.</p>
+            <p>It might have been moved, deleted, or perhaps there was a typo in the URL.</p>
+            <a href="index.html" class="error-btn">Return to Homepage</a>
+        </div>
+    </main>
+
+</body>
+</html>
